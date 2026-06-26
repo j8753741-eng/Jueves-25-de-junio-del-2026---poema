@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eres el latido que nunca dejó de vivir en mi corazón</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,#2a143c 0%,#13071d 35%,#08040d 70%,#020202 100%);
+overflow-x:hidden;
+font-family:'Cormorant Garamond',serif;
+color:#fff;
+min-height:100vh;
+position:relative;
+
+}
+
+
+/* ESTRELLAS */
+
+body::before{
+
+content:"";
+position:fixed;
+inset:0;
+background-image:
+
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(#ffd6f7 1px,transparent 1px),
+radial-gradient(#ffffff 2px,transparent 2px);
+
+background-size:
+180px 180px,
+260px 260px,
+320px 320px;
+
+opacity:.45;
+animation:stars 90s linear infinite;
+pointer-events:none;
+
+}
+
+@keyframes stars{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-600px);
+}
+
+}
+
+
+/* LUNA */
+
+.moon{
+
+position:fixed;
+top:60px;
+right:80px;
+
+width:170px;
+height:170px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+#fffefb,
+#fff3c9 45%,
+#ffe8a5 75%,
+#f3d96f);
+
+box-shadow:
+
+0 0 30px #fff,
+0 0 60px #ffe58d,
+0 0 120px #ffe58d;
+
+animation:moon 8s ease-in-out infinite;
+
+}
+
+@keyframes moon{
+
+50%{
+transform:scale(1.05);
+}
+
+}
+
+
+/* BRILLOS */
+
+.sparkles{
+
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+
+}
+
+.sparkles span{
+
+position:absolute;
+display:block;
+
+width:5px;
+height:5px;
+
+background:white;
+
+border-radius:50%;
+
+animation:float 12s linear infinite;
+
+box-shadow:
+
+0 0 10px white,
+0 0 20px pink;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(100vh) scale(.2);
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.3);
+opacity:0;
+
+}
+
+}
+
+.sparkles span:nth-child(1){left:5%;animation-duration:9s;}
+.sparkles span:nth-child(2){left:14%;animation-duration:12s;}
+.sparkles span:nth-child(3){left:22%;animation-duration:10s;}
+.sparkles span:nth-child(4){left:34%;animation-duration:14s;}
+.sparkles span:nth-child(5){left:42%;animation-duration:9s;}
+.sparkles span:nth-child(6){left:56%;animation-duration:13s;}
+.sparkles span:nth-child(7){left:65%;animation-duration:10s;}
+.sparkles span:nth-child(8){left:73%;animation-duration:15s;}
+.sparkles span:nth-child(9){left:84%;animation-duration:11s;}
+.sparkles span:nth-child(10){left:95%;animation-duration:12s;}
+
+
+/* CORAZONES */
+
+.hearts{
+
+position:fixed;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+
+}
+
+.hearts span{
+
+position:absolute;
+bottom:-120px;
+
+font-size:22px;
+
+animation:heart 18s linear infinite;
+
+opacity:.35;
+
+}
+
+.hearts span:nth-child(1){left:10%;animation-duration:15s;}
+.hearts span:nth-child(2){left:20%;animation-duration:17s;}
+.hearts span:nth-child(3){left:30%;animation-duration:13s;}
+.hearts span:nth-child(4){left:40%;animation-duration:18s;}
+.hearts span:nth-child(5){left:50%;animation-duration:16s;}
+.hearts span:nth-child(6){left:60%;animation-duration:15s;}
+.hearts span:nth-child(7){left:70%;animation-duration:19s;}
+.hearts span:nth-child(8){left:80%;animation-duration:17s;}
+.hearts span:nth-child(9){left:90%;animation-duration:16s;}
+
+@keyframes heart{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+
+15%{
+opacity:.4;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+
+/* CONTENEDOR */
+
+.container{
+
+width:min(900px,92%);
+margin:90px auto;
+
+padding:70px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.18);
+
+border-radius:35px;
+
+box-shadow:
+
+0 0 35px rgba(255,192,203,.18),
+0 0 90px rgba(255,255,255,.06);
+
+position:relative;
+
+}
+
+
+/* ROSAS */
+
+.corner{
+
+position:absolute;
+font-size:42px;
+opacity:.9;
+
+}
+
+.tl{top:18px;left:25px;}
+.tr{top:18px;right:25px;}
+.bl{bottom:18px;left:25px;}
+.br{bottom:18px;right:25px;}
+
+
+/* TITULO */
+
+h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:72px;
+
+text-align:center;
+
+color:#ffe6f6;
+
+line-height:1.2;
+
+text-shadow:
+
+0 0 12px #fff,
+0 0 25px #ff8fd0,
+0 0 50px #ff62b2;
+
+margin-bottom:15px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+font-size:22px;
+
+letter-spacing:2px;
+
+color:#ffe7f5;
+
+margin-bottom:50px;
+
+}
+
+.separator{
+
+text-align:center;
+font-size:26px;
+margin:35px 0;
+color:#ffd7ef;
+
+}
+
+
+/* POEMA */
+
+.poem{
+
+font-size:31px;
+
+line-height:2.15;
+
+text-align:center;
+
+color:#fff8fd;
+
+}
+
+.poem p{
+
+margin:22px 0;
+
+animation:fade 1.4s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.final{
+
+margin-top:70px;
+
+text-align:center;
+
+font-family:'Great Vibes';
+
+font-size:44px;
+
+color:#ffd8ef;
+
+line-height:1.7;
+
+text-shadow:
+
+0 0 15px pink;
+
+}
+
+footer{
+
+margin-top:40px;
+text-align:center;
+font-size:20px;
+color:#ffeaf7;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<div class="sparkles">
+
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+
+</div>
+
+<div class="hearts">
+
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+
+</div>
+
+<div class="container">
+
+<div class="corner tl">🌹</div>
+<div class="corner tr">🌹</div>
+<div class="corner bl">🌹</div>
+<div class="corner br">🌹</div>
+
+<h1>
+Eres el latido que nunca dejó<br>
+de vivir en mi corazón
+</h1>
+
+<div class="subtitle">
+
+Jueves, 25 de junio de 2026 — Noche
+
+</div>
+
+<div class="separator">
+
+✦ 🌙 ✦ ❤️ ✦ 🌹 ✦ ❤️ ✦ 🌙 ✦
+
+</div>
+
+<div class="poem">
+
+<p>Esta noche,</p>
+
+<p>cuando el cielo parece haberse vestido con su más hermoso manto de estrellas,</p>
+
+<p>cuando la luna derrama su luz sobre cada rincón del mundo como si quisiera bendecir a quienes aman de verdad,</p>
+
+<p>mi corazón vuelve a encontrarte...</p>
+
+<p>Porque jamás dejó de hacerlo.</p>
+
+<p>Tal vez durante algunos días no llegaron hasta tus manos mis cartas ni mis poemas.</p>
+
+<p>Quizá el silencio ocupó el lugar donde antes viajaban mis palabras.</p>
+
+<p>Pero quiero que sepas algo, mi amor...</p>
+
+<p>El silencio nunca significó ausencia.</p>
+
+<p>Porque mientras no escribía,</p>
+
+<p>seguía amándote con la misma intensidad.</p>
+
+<p>Seguía pronunciando tu nombre en cada uno de mis pensamientos.</p>
+
+<p>Seguía imaginando tu sonrisa iluminando mis días.</p>
+
+<p>Seguía soñando con el instante en que pudiera volver a decirte cuánto significas para mí.</p>
+
+<p>Y esta noche...</p>
+
+<p>he vuelto.</p>
+
+<p>He vuelto porque mi corazón ya no podía guardar tanto amor sin convertirlo en palabras.</p>
+
+<p>Porque tú eres el verso más hermoso que la vida escribió para mí.</p>
+
+<p>La melodía que hace bailar a mi alma.</p>
+
+<p>La paz donde descansan todos mis miedos.</p>
+
+<p>El refugio donde mi corazón aprendió que amar también significa sentirse en casa.</p>
+
+<p>Eres la mujer que transformó mis días comunes en recuerdos extraordinarios.</p>
+
+<p>La razón por la que ahora el amanecer tiene un color distinto.</p>
+
+  <p>La persona que convirtió cada pequeño detalle en un motivo para sonreír.</p>
+
+<p>Y cuando pienso en ti,</p>
+
+<p>el universo entero parece quedarse pequeño.</p>
+
+<p>Porque no existe estrella capaz de brillar como brillan tus ojos.</p>
+
+<p>No existe luna tan hermosa como tu sonrisa.</p>
+
+<p>No existe amanecer que pueda compararse con la felicidad que siento cuando imagino volver a abrazarte.</p>
+
+<div class="separator">
+
+❤️ ✧ 🌙 ✧ ❤️ ✧ 🌹 ✧ ❤️ ✧ 🌙 ✧ ❤️
+
+</div>
+
+<p>A veces me pregunto cómo fue posible que entre millones de caminos la vida cruzara el mío con el tuyo.</p>
+
+<p>Y siempre encuentro la misma respuesta.</p>
+
+<p>Los milagros existen.</p>
+
+<p>Y tú eres el más hermoso de todos.</p>
+
+<p>Si pudiera detener el tiempo,</p>
+
+<p>elegiría quedarme para siempre en uno de esos abrazos donde desaparece el mundo.</p>
+
+<p>En uno de esos instantes donde tu corazón y el mío parecen hablar un idioma que nadie más entiende.</p>
+
+<p>Porque contigo descubrí que el verdadero amor no necesita hacer ruido.</p>
+
+<p>Solo necesita dos corazones que nunca dejen de elegirse.</p>
+
+<p>Y yo...</p>
+
+<p>te elijo.</p>
+
+<p>Hoy.</p>
+
+<p>Mañana.</p>
+
+<p>Dentro de mil noches.</p>
+
+<p>Y cada día que Dios decida regalarme.</p>
+
+<p>Quiero seguir aprendiendo cada parte de ti.</p>
+
+<p>Quiero celebrar tus alegrías.</p>
+
+<p>Sostener tu mano en los momentos difíciles.</p>
+
+<p>Secar tus lágrimas antes de que lleguen a caer.</p>
+
+<p>Y recordarte siempre que eres la mujer más maravillosa que mis ojos pudieron conocer.</p>
+
+<div class="separator">
+
+🌹 ✦ ✨ ✦ 🌹 ✦ ❤️ ✦ 🌹 ✦ ✨ ✦ 🌹
+
+</div>
+
+<p>Esta noche deseo que el viento lleve hasta tu ventana cada uno de mis pensamientos.</p>
+
+<p>Que la luna acaricie tu rostro como si fueran mis manos.</p>
+
+<p>Que las estrellas iluminen tus sueños mientras mi corazón permanece despierto, pensando solamente en ti.</p>
+
+<p>Porque incluso cuando el mundo duerme...</p>
+
+<p>mi amor por ti permanece despierto.</p>
+
+<p>Ardiendo.</p>
+
+<p>Creciendo.</p>
+
+<p>Respirando tu nombre con cada latido.</p>
+
+<p>Quisiera escribirte un poema que nunca terminara.</p>
+
+<p>Uno tan largo como el infinito.</p>
+
+<p>Tan profundo como el océano.</p>
+
+<p>Tan inmenso como el universo.</p>
+
+<p>Pero ni todas las palabras del mundo serían suficientes para explicar lo que siento cuando pronuncio tu nombre.</p>
+
+<p>Porque tú no eres solamente el amor de mi vida.</p>
+
+<p>Eres el sueño que jamás quiero despertar.</p>
+
+<p>La bendición que nunca dejaré de agradecer.</p>
+
+<p>La casualidad más perfecta que el destino puso frente a mí.</p>
+
+<p>La historia más hermosa que mi corazón tendrá el privilegio de vivir.</p>
+
+<p>Y si algún día vuelven a existir silencios entre nosotros,</p>
+
+<p>quiero que recuerdes esta noche.</p>
+
+<p>Recuerda que mi amor jamás se detuvo.</p>
+
+<p>Solo esperaba el momento perfecto para volver a florecer con más fuerza.</p>
+
+  <p>Porque así es mi corazón contigo.</p>
+
+<p>Cada día te ama más.</p>
+
+<p>Cada noche te extraña más.</p>
+
+<p>Cada amanecer vuelve a enamorarse de ti como si fuera la primera vez.</p>
+
+<div class="separator">
+
+🌙 ❤️ ✦ 🌹 ✦ ❤️ ✦ 🌙
+
+</div>
+
+<p>Mi niña hermosa...</p>
+
+<p>Gracias por existir.</p>
+
+<p>Gracias por hacer que mi vida tenga un significado tan hermoso.</p>
+
+<p>Gracias por enseñarme que el amor verdadero sí existe.</p>
+
+<p>Y gracias por convertirte, sin darte cuenta, en el lugar favorito donde siempre quiere quedarse mi alma.</p>
+
+<p>Esta noche de jueves, 25 de junio de 2026,</p>
+
+<p>bajo el mismo cielo que contempla nuestros sueños,</p>
+
+<p>te prometo que mientras mi corazón siga latiendo,</p>
+
+<p>siempre habrá un poema esperando por ti,</p>
+
+<p>una carta naciendo entre mis manos,</p>
+
+<p>y un hombre que nunca dejará de amarte con toda la fuerza de su alma.</p>
+
+<div class="separator">
+
+❤️ ✦ 🌹 ✦ ✨ ✦ 🌙 ✦ ✨ ✦ 🌹 ✦ ❤️
+
+</div>
+
+<p><strong>Porque tú eres, hoy y siempre, el amor más grande, el destino más bello y la eternidad más hermosa que mi corazón pudo encontrar.</strong></p>
+
+</div>
+
+<div class="final">
+
+Con todo mi amor...<br><br>
+
+El hombre que jamás dejará de enamorarse de ti. ❤️
+
+</div>
+
+<footer>
+
+🌹 Que cada estrella de esta noche sea un "te amo",<br>
+y que la luna guarde este poema para siempre en tu corazón. 🌙
+
+</footer>
+
+</div>
+
+</body>
+  </html>
